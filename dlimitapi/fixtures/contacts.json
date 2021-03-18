@@ -1,0 +1,20 @@
+[
+    {
+        "model": "dlimitapi.contact",
+        "pk": 1,
+        "fields": {
+            "name": "Cary",
+            "phone": "123-456-789",
+            "drinker": "1"
+        }
+    },
+    {
+        "model": "dlimitapi.contact",
+        "pk": 2,
+        "fields": {
+            "name": "Carl",
+            "phone": "123-456-788",
+            "drinker": "2"
+        }
+    }
+]

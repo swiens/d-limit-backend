@@ -1,0 +1,11 @@
+[
+    {
+        "model": "dlimitapi.event",
+        "pk": 1,
+        "fields": {
+            "start_time": "12:00",
+            "end_time": "2:00",
+            "drinker": "1"
+        }
+    }
+]

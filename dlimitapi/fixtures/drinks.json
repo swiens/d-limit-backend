@@ -1,0 +1,23 @@
+[
+    {
+        "model": "dlimitapi.drink",
+        "pk": 1,
+        "fields": {
+            "type": "Beer"
+        }
+    },
+    {
+        "model": "dlimitapi.drink",
+        "pk": 2,
+        "fields": {
+            "type": "Liquor"
+        }
+    },
+    {
+        "model": "dlimitapi.drink",
+        "pk": 3,
+        "fields": {
+            "type": "Wine"
+        }
+    }
+]    

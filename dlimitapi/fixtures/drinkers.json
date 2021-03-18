@@ -1,0 +1,22 @@
+[
+    {
+        "model": "dlimitapi.drinker",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "height": "5.8",
+            "age": "32",
+            "weight": "125"
+        }
+    },
+    {
+        "model": "dlimitapi.drinker",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "height": "5.8",
+            "age": "33",
+            "weight": "125"
+        }
+    }
+]

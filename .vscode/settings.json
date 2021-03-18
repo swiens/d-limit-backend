@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "dlimit",
+            "database": "${workspaceFolder:d-limit-backend}/db.sqlite3"
+        }
+    ]
+}
