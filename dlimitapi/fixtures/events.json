@@ -7,5 +7,14 @@
             "end_time": "2:00",
             "drinker": "1"
         }
+    },
+    {
+        "model": "dlimitapi.event",
+        "pk": 2,
+        "fields": {
+            "start_time": "11:00",
+            "end_time": "2:00",
+            "drinker": "1"
+        }
     }
 ]
