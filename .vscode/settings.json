@@ -6,5 +6,6 @@
             "name": "dlimit",
             "database": "${workspaceFolder:d-limit-backend}/db.sqlite3"
         }
-    ]
+    ],
+    "python.pythonPath": "/usr/local/bin/python3"
 }
