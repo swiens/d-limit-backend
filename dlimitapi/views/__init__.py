@@ -3,3 +3,4 @@ from .auth import register_user
 from .drinks import Drinks
 from .events import Events
 from .contacts import Contacts
+from .eventdrinks import EventDrinks

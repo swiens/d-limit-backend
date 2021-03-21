@@ -78,18 +78,18 @@ class Events(ViewSet):
             events, many=True, context={'request': request})
         return Response(serializer.data)
 
-class EventUserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'email']
-class EventDrinkerSerializer(serializers.ModelSerializer):
-    user = EventUserSerializer(many=False)
-    class Meta:
-        model = Drinker
-        fields = ['user']
+# class EventUserSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = ['first_name', 'last_name', 'email']
+# class EventDrinkerSerializer(serializers.ModelSerializer):
+#     user = EventUserSerializer(many=False)
+#     class Meta:
+#         model = Drinker
+#         fields = ['user']
 class EventSerializer(serializers.ModelSerializer):
-    drinker = EventDrinkerSerializer(many=False)
-    drink = DrinkSerializer(many=False)
+    # drinker = EventDrinkerSerializer(many=False)
+    # drink = DrinkSerializer(many=False)
     class Meta:
         model = Event
         fields = ('id', 'start_time', 'end_time', 'drinker')
