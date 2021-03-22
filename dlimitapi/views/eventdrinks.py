@@ -54,19 +54,14 @@ class EventDrinks(ViewSet):
     def list(self, request):
        
         eventDrink = EventDrink.objects.all()
-
+        event_id = self.request.query_params.get("event", None)
+        if event_id is not None: 
+            eventDrink = eventDrink.filter(event__id=event_id)
         serializer = EventDrinkSerializer(
             eventDrink, many=True, context={'request': request})
         return Response(serializer.data)
 
 
-    def customList(self, request):
-       
-        eventDrink = EventDrink.objects.all()
-
-        serializer = EventDrinkSerializer(
-            eventDrink, many=True, context={'request': request})
-        return Response(serializer.data)
 
 class EventDrinkSerializer(serializers.ModelSerializer):
    
