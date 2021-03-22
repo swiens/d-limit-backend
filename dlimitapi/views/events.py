@@ -70,7 +70,7 @@ class Events(ViewSet):
         events = Event.objects.all()
 
         event = self.request.query_params.get('eventId', None)
-        if game is not None:
+        if event is not None:
             events = events.filter(event_id=event)
 
 

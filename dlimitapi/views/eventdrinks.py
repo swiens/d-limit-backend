@@ -59,6 +59,15 @@ class EventDrinks(ViewSet):
             eventDrink, many=True, context={'request': request})
         return Response(serializer.data)
 
+
+    def customList(self, request):
+       
+        eventDrink = EventDrink.objects.all()
+
+        serializer = EventDrinkSerializer(
+            eventDrink, many=True, context={'request': request})
+        return Response(serializer.data)
+
 class EventDrinkSerializer(serializers.ModelSerializer):
    
     class Meta:

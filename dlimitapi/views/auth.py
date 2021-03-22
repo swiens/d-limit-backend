@@ -61,9 +61,9 @@ def register_user(request):
     # Now save the extra info in the levelupapi_gamer table
     drinker = Drinker.objects.create(
         user=new_user,
-        height=['height'],
-        age=['age'],
-        weight=['weight']
+        height= req_body['height'],
+        age= req_body['age'],
+        weight= req_body['weight']
     )
 
     # Commit the user to the database by saving it
