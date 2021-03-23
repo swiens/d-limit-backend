@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from dlimitapi.models import Drink, Event, Drinker
 from dlimitapi.views.drinks import DrinkSerializer
+import datetime
 
 
 class Events(ViewSet):
@@ -16,10 +17,8 @@ class Events(ViewSet):
        
         drinker = Drinker.objects.get(user=request.auth.user)
 
-        
         event = Event()
-        event.start_time = request.data["name"]
-        event.end_time = request.data["phone"]
+        event.start_time = datetime.datetime.now()
         event.drinker = drinker
     
         try:
@@ -42,7 +41,7 @@ class Events(ViewSet):
         
         drinker = Drinker.objects.get(user=request.auth.user)
 
-        event = Evemt.objects.get(pk=pk)
+        event = Event.objects.get(pk=pk)
         event.start_time = request.data["start_time"]
         event.end_time = request.data["end_time"]
         event.drinker = drinker
