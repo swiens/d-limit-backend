@@ -67,7 +67,9 @@ class Contacts(ViewSet):
 
     def list(self, request):
        
-        contacts = Contact.objects.all()
+        drinker = Drinker.objects.get(user=request.auth.user)
+
+        contacts = Contact.objects.filter(drinker=drinker)
 
         serializer = ContactSerializer(
             contacts, many=True, context={'request': request})

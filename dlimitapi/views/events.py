@@ -76,22 +76,20 @@ class Events(ViewSet):
         serializer = EventSerializer(
             events, many=True, context={'request': request})
         return Response(serializer.data)
+    
+    @action(detail=True, methods=['put'])
+    def end_event(self, request, pk=None):
+        event = Event.objects.get(pk=pk)
+        event.end_time = datetime.datetime.now()
+        event.departure = request.data["departure"]
+        event.save()
+        
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
 
-# class EventUserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['first_name', 'last_name', 'email']
-# class EventDrinkerSerializer(serializers.ModelSerializer):
-#     user = EventUserSerializer(many=False)
-#     class Meta:
-#         model = Drinker
-#         fields = ['user']
 class EventSerializer(serializers.ModelSerializer):
-    # drinker = EventDrinkerSerializer(many=False)
-    # drink = DrinkSerializer(many=False)
     class Meta:
         model = Event
-        fields = ('id', 'start_time', 'end_time', 'drinker')
+        fields = ('id', 'start_time', 'end_time', 'drinker', 'departure')
 
 
 
