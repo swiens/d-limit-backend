@@ -65,13 +65,10 @@ class Events(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def list(self, request):
-       
-        events = Event.objects.all()
+        
+        drinker = Drinker.objects.get(user=request.auth.user)
 
-        event = self.request.query_params.get('eventId', None)
-        if event is not None:
-            events = events.filter(event_id=event)
-
+        events = Event.objects.filter(drinker=drinker)
 
         serializer = EventSerializer(
             events, many=True, context={'request': request})
